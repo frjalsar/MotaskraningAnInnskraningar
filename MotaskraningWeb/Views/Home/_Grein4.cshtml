@@ -1,0 +1,23 @@
+﻿@model Grein
+
+@using HtmlHelpers.BeginCollectionItemCore;
+
+@using (Html.BeginCollectionItem("greinar"))
+{
+
+    <td>
+        @Html.DropDownListFor(m => m.nafnGreinar, ViewBag.GreinarUtiKvenna as SelectList, new { @class = "form-control" })
+    </td>
+
+
+
+    //new SelectList(ViewBag.CityList4, "Value", "Text")
+    <!-- td>
+        <a>Gerð greinar: </a> Html.TextBoxFor(m => m.gerdGreinar, new { class = "form-control" })
+    </td -->
+
+    <!-- <td>
+        <span class="glyphicon glyphicon-trash action-icon" data-action="removeItem">Eyða</span>
+    </td> -->
+
+}

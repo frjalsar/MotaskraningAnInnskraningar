@@ -1,0 +1,5 @@
+
+*.dll
+/MotaskraningWeb/bin
+/MotaskraningWeb/.vs
+/MotaskraningWeb/obj

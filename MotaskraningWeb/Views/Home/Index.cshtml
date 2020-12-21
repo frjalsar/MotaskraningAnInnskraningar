@@ -1,0 +1,161 @@
+﻿@model MotaskraningWeb.Models.MotaskraningModel
+@{
+    ViewData["Title"] = "Motaskraning";
+}
+
+<h1>Motaskraning</h1>
+
+<!-- div>
+    <a>Móthaldari: </a>
+    <input value="Go!" onclick="" />
+</div>
+<div>
+    <a>Staðsetning móts: </a>
+    <input value="Go!" onclick="" />
+</div>
+<div>
+    <a>Dómari: </a>
+    <input value="Go!" onclick="" />
+</div -->
+<!--link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+
+                // @Html.HiddenFor(model => model.EmpID)
+
+            <div class="form-group input-group-sm">
+                @Html.LabelFor(model => model.skraning.DagsFra)
+                @Html.TextBoxFor(model => model.skraning.DagsFra, new { @style = "width:11rem;", @type = "date", @class = "form-control datepicker", placeholder = "Enter Drop-off date here..." })
+                @Html.ValidationMessageFor(model => model.skraning.DagsFra)
+            </div>
+            
+            <div class="form-group input-group-sm">
+                @Html.LabelFor(model => model.skraning.DagsTil)
+                @Html.TextBoxFor(model => model.skraning.DagsTil, new { @style = "width:11rem;", @type = "date", @class = "form-control datepicker", placeholder = "Enter Drop-off date here..." })
+                @Html.ValidationMessageFor(model => model.skraning.DagsTil)
+            </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.skraning.motshaldari, "Mótshaldari")
+                    @Html.DropDownListFor(model => model.skraning.motshaldari, ViewBag.CityList2 as SelectList, new { @style = "width:22rem;", @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.skraning.stadsetning, "staðsetning")
+                    @Html.DropDownListFor(model => model.skraning.stadsetning, ViewBag.CityList3 as SelectList, new { @style = "width:22rem;", @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.skraning.domari, "Dómari")
+                    @Html.DropDownListFor(model => model.skraning.domari, ViewBag.CityList as SelectList, new { @style = "width:22rem;", @class = "form-control" })
+                </div>
+
+                <table id="children">
+                    <tbody>
+                        <!-- tr>
+                            <td><strong>Grein</strong></td>
+                            <td><strong>Gerð greinar</strong></td>
+                            <td><strong>Takkar</strong></td>
+                        </tr -->
+                        <tr>
+                            <td><strong>Greinar:</strong></td>
+                        </tr>
+                        @if (Model.skraning.greinar != null)
+                        {
+                            @foreach (var grein in Model.skraning.greinar)
+                            {
+                                <tr>
+                                    @Html.Partial("_Grein", grein)
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+                <strong>Bæta við grein: </strong>
+                <button type="button" class="btn btn-secondary" id="addChild" onclick="AddOne()">Úti Karla</button>
+                <button type="button" class="btn btn-secondary" id="addChild" onclick="AddOne2()">Úti Kvenna</button>
+                <button type="button" class="btn btn-secondary" id="addChild" onclick="AddOne3()">Inni Karla</button>
+                <button type="button" class="btn btn-secondary" id="addChild" onclick="AddOne4()">Inni Kvenna</button>
+                <br />
+                <input type="submit" class="btn btn-primary " value="Senda mót" />
+
+            }
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    function AddOne() {
+
+        $.ajax({
+             url: "@Url.Action("AddChild", "Home")",
+            data: {
+            },
+            type: "Get",
+            dataType: "html",
+             success: function (data) {
+                //Whatever result you have got from your controller with html partial view replace with a specific html.
+                 $('#children> tbody:last-child').append(data);
+                 // $("#ThresholdmodalPartialView").html(data); // HTML DOM replace
+            }
+        });
+    }
+
+    function AddOne2() {
+
+        $.ajax({
+             url: "@Url.Action("AddChild2", "Home")",
+            data: {
+            },
+            type: "Get",
+            dataType: "html",
+             success: function (data) {
+                //Whatever result you have got from your controller with html partial view replace with a specific html.
+                 $('#children> tbody:last-child').append(data);
+                 // $("#ThresholdmodalPartialView").html(data); // HTML DOM replace
+            }
+        });
+    }
+
+    function AddOne3() {
+
+        $.ajax({
+             url: "@Url.Action("AddChild3", "Home")",
+            data: {
+            },
+            type: "Get",
+            dataType: "html",
+             success: function (data) {
+                //Whatever result you have got from your controller with html partial view replace with a specific html.
+                 $('#children> tbody:last-child').append(data);
+                 // $("#ThresholdmodalPartialView").html(data); // HTML DOM replace
+            }
+        });
+    }
+
+    function AddOne4() {
+
+        $.ajax({
+             url: "@Url.Action("AddChild4", "Home")",
+            data: {
+            },
+            type: "Get",
+            dataType: "html",
+             success: function (data) {
+                //Whatever result you have got from your controller with html partial view replace with a specific html.
+                 $('#children> tbody:last-child').append(data);
+                 // $("#ThresholdmodalPartialView").html(data); // HTML DOM replace
+            }
+        });
+    }
+
+</script>
