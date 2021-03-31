@@ -3,3 +3,7 @@
 /MotaskraningWeb/bin
 /MotaskraningWeb/.vs
 /MotaskraningWeb/obj
+/TestMotaskraning/bin
+/TestMotaskraning/.vs
+/TestMotaskraning/obj
+*.sln
