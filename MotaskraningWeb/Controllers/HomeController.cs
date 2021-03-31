@@ -233,7 +233,13 @@ namespace MotaskraningWeb.Controllers
 
             JiraDot.fields = fields;
 
-            SendToJira(JiraDot);
+            // breyta sem að segir til um hvort búið séa að velja dagsetningar fyrir mótið.
+            var AreDatesValid = !empmodel.skraning.DagsFra.Equals(default(DateTime)) && !empmodel.skraning.DagsTil.Equals(default(DateTime));
+
+            // Ef allt er rétt í forminu, þá senda á Jira. Annars bíða þangað til manneskjan lagar það 
+            if (AreDatesValid) { 
+                SendToJira(JiraDot);
+            }
 
             // Ná í og skila upphafsupplýsingum
             /*List<Domari> Domarar = NaIDomara();
