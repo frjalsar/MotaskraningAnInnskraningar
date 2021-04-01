@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FakeItEasy;
 using MotaskraningWeb.Models;
+using System.Collections.Generic;
 
 namespace TestMotaskraning
 {
@@ -71,6 +72,96 @@ namespace TestMotaskraning
 
             Assert.IsNotNull(keys);
             Assert.IsNotNull(values);
+        }
+
+        [TestMethod]
+        public void testAddChild()
+        {
+            var ar = Contr.AddChild() as PartialViewResult;
+            // IActionResult result = Contr.AddChild();
+
+            // string res = result.ToString(); //Index().ViewData.Model;
+
+            var keys = ar.ViewData.Keys;
+            var values = ar.ViewData.Values;
+
+            Assert.IsNotNull(keys);
+            Assert.IsNotNull(values);
+        }
+
+        [TestMethod]
+        public void testAddChild2()
+        {
+            var ar = Contr.AddChild2() as PartialViewResult;
+            // IActionResult result = Contr.AddChild();
+
+            // string res = result.ToString(); //Index().ViewData.Model;
+
+            var keys = ar.ViewData.Keys;
+            var values = ar.ViewData.Values;
+
+            Assert.IsNotNull(keys);
+            Assert.IsNotNull(values);
+        }
+
+        [TestMethod]
+        public void testAddChild3()
+        {
+            var ar = Contr.AddChild3() as PartialViewResult;
+            // IActionResult result = Contr.AddChild();
+
+            // string res = result.ToString(); //Index().ViewData.Model;
+
+            var keys = ar.ViewData.Keys;
+            var values = ar.ViewData.Values;
+
+            Assert.IsNotNull(keys);
+            Assert.IsNotNull(values);
+        }
+
+        [TestMethod]
+        public void testAddChild4()
+        {
+            var ar = Contr.AddChild4() as PartialViewResult;
+            // IActionResult result = Contr.AddChild();
+
+            // string res = result.ToString(); //Index().ViewData.Model;
+
+            var keys = ar.ViewData.Keys;
+            var values = ar.ViewData.Values;
+
+            Assert.IsNotNull(keys);
+            Assert.IsNotNull(values);
+        }
+
+        [TestMethod]
+        public void testNaIDomara()
+        {
+            var ar = Contr.NaIDomara() as List<Domari>;
+
+            Assert.IsNotNull(ar);
+        }
+
+        [TestMethod]
+        public void testNaIStadsetningar()
+        {
+            var ar = Contr.NaIStadsetningar() as List<TextValueHolder>;
+
+            Assert.IsNotNull(ar);
+        }
+
+        [TestMethod]
+        public void testNaIMotshaldara()
+        {
+            var ar = Contr.NaIMotshaldara() as List<string>;
+            Assert.IsNotNull(ar);
+        }
+
+        [TestMethod]
+        public void testNaIGreinar()
+        {
+            var ar = Contr.NaIGreinar() as List<List<TextValueHolder>>;
+            Assert.IsNotNull(ar);
         }
     }
 }
