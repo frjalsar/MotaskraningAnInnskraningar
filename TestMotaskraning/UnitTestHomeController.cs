@@ -28,11 +28,12 @@ namespace TestMotaskraning
 
             string res = result.ToString(); //Index().ViewData.Model;
 
-            var keys = ar.ViewData.Keys;
-            var values = ar.ViewData.Values;
-
-            Assert.IsNotNull(keys);
-            Assert.IsNotNull(values);
+            Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar.ViewData);
+            Assert.IsNotNull(ar.ViewData.Keys);
+            Assert.IsNotNull(ar.ViewData.Values);
+            Assert.AreNotEqual(0, ar.ViewData.Keys.Count);
+            Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
         // Todo: Fix
@@ -48,11 +49,12 @@ namespace TestMotaskraning
 
             string res = result.ToString(); //Index().ViewData.Model;
 
-            var keys = ar.ViewData.Keys;
-            var values = ar.ViewData.Values;
-
-            Assert.IsNotNull(keys);
-            Assert.IsNotNull(values);
+            Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar.ViewData);
+            Assert.IsNotNull(ar.ViewData.Keys);
+            Assert.IsNotNull(ar.ViewData.Values);
+            Assert.AreNotEqual(0, ar.ViewData.Keys.Count);
+            Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
         // Todo: Fix
@@ -67,11 +69,12 @@ namespace TestMotaskraning
 
             string res = result.ToString(); //Index().ViewData.Model;
 
-            var keys = ar.ViewData.Keys;
-            var values = ar.ViewData.Values;
-
-            Assert.IsNotNull(keys);
-            Assert.IsNotNull(values);
+            Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar.ViewData);
+            Assert.IsNotNull(ar.ViewData.Keys);
+            Assert.IsNotNull(ar.ViewData.Values);
+            Assert.AreNotEqual(0, ar.ViewData.Keys.Count);
+            Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
         // Todo: Fix
@@ -94,8 +97,12 @@ namespace TestMotaskraning
             var keys = ar.ViewData.Keys;
             var values = ar.ViewData.Values;
 
-            Assert.IsNotNull(keys);
-            Assert.IsNotNull(values);
+            Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar.ViewData);
+            Assert.IsNotNull(ar.ViewData.Keys);
+            Assert.IsNotNull(ar.ViewData.Values);
+            Assert.AreNotEqual(0, ar.ViewData.Keys.Count);
+            Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
         // Todo: Fix
@@ -119,11 +126,12 @@ namespace TestMotaskraning
 
             string res = result.ToString(); //Index().ViewData.Model;
 
-            var keys = ar.ViewData.Keys;
-            var values = ar.ViewData.Values;
-
-            Assert.IsNotNull(keys);
-            Assert.IsNotNull(values);
+            Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar.ViewData);
+            Assert.IsNotNull(ar.ViewData.Keys);
+            Assert.IsNotNull(ar.ViewData.Values);
+            Assert.AreNotEqual(0, ar.ViewData.Keys.Count);
+            Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
         // Todo: Fix
@@ -135,11 +143,12 @@ namespace TestMotaskraning
 
             // string res = result.ToString(); //Index().ViewData.Model;
 
-            var keys = ar.ViewData.Keys;
-            var values = ar.ViewData.Values;
-
-            Assert.IsNotNull(keys);
-            Assert.IsNotNull(values);
+            Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar.ViewData);
+            Assert.IsNotNull(ar.ViewData.Keys);
+            Assert.IsNotNull(ar.ViewData.Values);
+            Assert.AreNotEqual(0, ar.ViewData.Keys.Count);
+            Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
         // Todo: Fix
@@ -151,11 +160,12 @@ namespace TestMotaskraning
 
             // string res = result.ToString(); //Index().ViewData.Model;
 
-            var keys = ar.ViewData.Keys;
-            var values = ar.ViewData.Values;
-
-            Assert.IsNotNull(keys);
-            Assert.IsNotNull(values);
+            Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar.ViewData);
+            Assert.IsNotNull(ar.ViewData.Keys);
+            Assert.IsNotNull(ar.ViewData.Values);
+            Assert.AreNotEqual(0, ar.ViewData.Keys.Count);
+            Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
         // Todo: Fix
@@ -167,11 +177,12 @@ namespace TestMotaskraning
 
             // string res = result.ToString(); //Index().ViewData.Model;
 
-            var keys = ar.ViewData.Keys;
-            var values = ar.ViewData.Values;
-
-            Assert.IsNotNull(keys);
-            Assert.IsNotNull(values);
+            Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar.ViewData);
+            Assert.IsNotNull(ar.ViewData.Keys);
+            Assert.IsNotNull(ar.ViewData.Values);
+            Assert.AreNotEqual(0, ar.ViewData.Keys.Count);
+            Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
         // Todo: Fix
@@ -183,11 +194,12 @@ namespace TestMotaskraning
 
             // string res = result.ToString(); //Index().ViewData.Model;
 
-            var keys = ar.ViewData.Keys;
-            var values = ar.ViewData.Values;
-
-            Assert.IsNotNull(keys);
-            Assert.IsNotNull(values);
+            Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar.ViewData);
+            Assert.IsNotNull(ar.ViewData.Keys);
+            Assert.IsNotNull(ar.ViewData.Values);
+            Assert.AreNotEqual(0, ar.ViewData.Keys.Count);
+            Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
         // Todo: check there is at least one judge and he has a name, that is not "" or null
@@ -196,6 +208,11 @@ namespace TestMotaskraning
         {
             var ar = Contr.NaIDomara() as List<Domari>;
             Assert.IsNotNull(ar);
+            // Assert.IsInstanceOfType(ar, typeof(List<Domari>));
+            // Assert.IsInstanceOfType(ar[0].nafn, typeof(string));
+            Assert.IsNotNull(ar[0]);
+            Assert.IsNotNull(ar[0].nafn);
+            Assert.AreNotEqual(ar[0].nafn, "");
         }
 
         // Todo: fix
@@ -204,6 +221,11 @@ namespace TestMotaskraning
         {
             var ar = Contr.NaIStadsetningar() as List<TextValueHolder>;
             Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar[0]);
+            Assert.IsNotNull(ar[0].Text);
+            Assert.AreNotEqual(ar[0].Text, "");
+            Assert.IsNotNull(ar[0].Value);
+            Assert.AreNotEqual(ar[0].Value, "");
         }
 
         // Todo: Fix
@@ -212,6 +234,8 @@ namespace TestMotaskraning
         {
             var ar = Contr.NaIMotshaldara() as List<string>;
             Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar[0]);
+            Assert.AreNotEqual(ar[0], "");
         }
 
         // Todo: Fix
@@ -220,6 +244,12 @@ namespace TestMotaskraning
         {
             var ar = Contr.NaIGreinar() as List<List<TextValueHolder>>;
             Assert.IsNotNull(ar);
+            Assert.IsNotNull(ar[0]);
+            Assert.IsNotNull(ar[0][0]);
+            Assert.IsNotNull(ar[0][0].Text);
+            Assert.AreNotEqual(ar[0][0].Text, "");
+            Assert.IsNotNull(ar[0][0].Value);
+            Assert.AreNotEqual(ar[0][0].Value, "");
         }
     }
 }
