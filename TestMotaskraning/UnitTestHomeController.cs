@@ -19,14 +19,13 @@ namespace TestMotaskraning
             Contr = new HomeController(loggr);
         }
 
-        // Todo: check that there are values in the objects that should have them
         [TestMethod]
         public void TestGetIndex()
         {
             var ar = Contr.Index() as ViewResult;
             IActionResult result = Contr.Index();
 
-            string res = result.ToString(); //Index().ViewData.Model;
+            string res = result.ToString();
 
             Assert.IsNotNull(ar);
             Assert.IsNotNull(ar.ViewData);
@@ -36,7 +35,6 @@ namespace TestMotaskraning
             Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
-        // Todo: Fix
         [TestMethod]
         [ExpectedException(typeof(System.NullReferenceException),
         "There is null in the place of skraning in the empmodel object.")]
@@ -47,7 +45,7 @@ namespace TestMotaskraning
             var ar = Contr.Index() as ViewResult;
             IActionResult result = Contr.Index(empmodel);
 
-            string res = result.ToString(); //Index().ViewData.Model;
+            string res = result.ToString();
 
             Assert.IsNotNull(ar);
             Assert.IsNotNull(ar.ViewData);
@@ -57,7 +55,6 @@ namespace TestMotaskraning
             Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
-        // Todo: Fix
         [TestMethod]
         public void testpostindex_empmodel_not_empty()
         {
@@ -67,7 +64,7 @@ namespace TestMotaskraning
             var ar = Contr.Index() as ViewResult;
             IActionResult result = Contr.Index(empmodel);
 
-            string res = result.ToString(); //Index().ViewData.Model;
+            string res = result.ToString();
 
             Assert.IsNotNull(ar);
             Assert.IsNotNull(ar.ViewData);
@@ -77,7 +74,6 @@ namespace TestMotaskraning
             Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
-        // Todo: Fix
         [TestMethod]
         public void testpostindex_skraning_not_empty()
         {
@@ -92,7 +88,7 @@ namespace TestMotaskraning
             var ar = Contr.Index() as ViewResult;
             IActionResult result = Contr.Index(empmodel);
 
-            string res = result.ToString(); //Index().ViewData.Model;
+            string res = result.ToString();
 
             var keys = ar.ViewData.Keys;
             var values = ar.ViewData.Values;
@@ -105,7 +101,6 @@ namespace TestMotaskraning
             Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
-        // Todo: Fix
         [TestMethod]
         public void testpostindex_Greinar_not_empty()
         {
@@ -124,7 +119,7 @@ namespace TestMotaskraning
             var ar = Contr.Index() as ViewResult;
             IActionResult result = Contr.Index(empmodel);
 
-            string res = result.ToString(); //Index().ViewData.Model;
+            string res = result.ToString();
 
             Assert.IsNotNull(ar);
             Assert.IsNotNull(ar.ViewData);
@@ -134,14 +129,10 @@ namespace TestMotaskraning
             Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
-        // Todo: Fix
         [TestMethod]
         public void testAddChild()
         {
             var ar = Contr.AddChild() as PartialViewResult;
-            // IActionResult result = Contr.AddChild();
-
-            // string res = result.ToString(); //Index().ViewData.Model;
 
             Assert.IsNotNull(ar);
             Assert.IsNotNull(ar.ViewData);
@@ -151,14 +142,10 @@ namespace TestMotaskraning
             Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
-        // Todo: Fix
         [TestMethod]
         public void testAddChild2()
         {
             var ar = Contr.AddChild2() as PartialViewResult;
-            // IActionResult result = Contr.AddChild();
-
-            // string res = result.ToString(); //Index().ViewData.Model;
 
             Assert.IsNotNull(ar);
             Assert.IsNotNull(ar.ViewData);
@@ -168,14 +155,10 @@ namespace TestMotaskraning
             Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
-        // Todo: Fix
         [TestMethod]
         public void testAddChild3()
         {
             var ar = Contr.AddChild3() as PartialViewResult;
-            // IActionResult result = Contr.AddChild();
-
-            // string res = result.ToString(); //Index().ViewData.Model;
 
             Assert.IsNotNull(ar);
             Assert.IsNotNull(ar.ViewData);
@@ -185,14 +168,10 @@ namespace TestMotaskraning
             Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
-        // Todo: Fix
         [TestMethod]
         public void testAddChild4()
         {
             var ar = Contr.AddChild4() as PartialViewResult;
-            // IActionResult result = Contr.AddChild();
-
-            // string res = result.ToString(); //Index().ViewData.Model;
 
             Assert.IsNotNull(ar);
             Assert.IsNotNull(ar.ViewData);
@@ -202,20 +181,16 @@ namespace TestMotaskraning
             Assert.AreNotEqual(0, ar.ViewData.Values.Count);
         }
 
-        // Todo: check there is at least one judge and he has a name, that is not "" or null
         [TestMethod]
         public void testNaIDomara()
         {
             var ar = Contr.NaIDomara() as List<Domari>;
             Assert.IsNotNull(ar);
-            // Assert.IsInstanceOfType(ar, typeof(List<Domari>));
-            // Assert.IsInstanceOfType(ar[0].nafn, typeof(string));
             Assert.IsNotNull(ar[0]);
             Assert.IsNotNull(ar[0].nafn);
             Assert.AreNotEqual(ar[0].nafn, "");
         }
 
-        // Todo: fix
         [TestMethod]
         public void testNaIStadsetningar()
         {
@@ -228,7 +203,6 @@ namespace TestMotaskraning
             Assert.AreNotEqual(ar[0].Value, "");
         }
 
-        // Todo: Fix
         [TestMethod]
         public void testNaIMotshaldara()
         {
@@ -238,7 +212,6 @@ namespace TestMotaskraning
             Assert.AreNotEqual(ar[0], "");
         }
 
-        // Todo: Fix
         [TestMethod]
         public void testNaIGreinar()
         {
