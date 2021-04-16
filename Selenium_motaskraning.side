@@ -234,26 +234,22 @@
   }, {
     "id": "fd13b024-9f28-478a-9fd1-b8d535d5fcd6",
     "name": "AddEvents",
-    "commands": []
-  }, {
-    "id": "64cd035f-a092-4ebe-abe0-0e45b18eb6d3",
-    "name": "ChooseEvents",
     "commands": [{
-      "id": "c82ecbe1-e043-493e-ac02-9cabc322c3e5",
+      "id": "9ce37e14-2420-46a2-ba00-e3cdc7ede540",
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "f15a13b1-acf3-4b05-9806-eac46ed7b9d3",
+      "id": "0c2591c7-9529-41c0-9f26-eb1d75da1825",
       "comment": "",
       "command": "setWindowSize",
-      "target": "779x824",
+      "target": "770x824",
       "targets": [],
       "value": ""
     }, {
-      "id": "224ae20d-83ed-4a0e-bf75-f1c66a1ea9ad",
+      "id": "e94864ed-8d76-4d25-a508-7385ef78e1f4",
       "comment": "",
       "command": "click",
       "target": "id=addChild",
@@ -265,161 +261,330 @@
       ],
       "value": ""
     }, {
-      "id": "31953fd6-f22d-4fed-8e49-c95516d15d04",
+      "id": "968595e8-bee1-4c27-b11d-50c3cb0f2faf",
       "comment": "",
       "command": "click",
-      "target": "css=.form-group:nth-child(3)",
+      "target": "xpath=(//button[@id='addChild'])[2]",
       "targets": [
-        ["css=.form-group:nth-child(3)", "css:finder"],
-        ["xpath=//div[3]", "xpath:position"]
+        ["xpath=(//button[@id='addChild'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Úti Kvenna')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "4ce21202-90a2-47b5-b6b3-40d22262c9d6",
+      "id": "0bfc2026-afe2-4f0f-b0cc-1583492d26b5",
       "comment": "",
       "command": "click",
-      "target": "css=.form-group:nth-child(1)",
+      "target": "xpath=(//button[@id='addChild'])[3]",
       "targets": [
-        ["css=.form-group:nth-child(1)", "css:finder"],
-        ["xpath=//form/div", "xpath:position"]
+        ["xpath=(//button[@id='addChild'])[3]", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Inni Karla')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "af41a5ac-8d73-42f4-908f-824c3f9bb422",
+      "id": "bcf4ba7b-5864-49bd-abed-864145860a4a",
       "comment": "",
       "command": "click",
-      "target": "css=form",
+      "target": "xpath=(//button[@id='addChild'])[4]",
       "targets": [
-        ["css=form", "css:finder"],
-        ["xpath=//form[@action='/']", "xpath:attributes"],
-        ["xpath=//form", "xpath:position"]
+        ["xpath=(//button[@id='addChild'])[4]", "xpath:attributes"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Inni Kvenna')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "b87fa96a-ee4a-4c97-8849-394d016005b4",
+      "id": "5f4f9d2a-eedf-4b30-95cc-320b5387134a",
       "comment": "",
-      "command": "click",
-      "target": "css=form",
-      "targets": [
-        ["css=form", "css:finder"],
-        ["xpath=//form[@action='/']", "xpath:attributes"],
-        ["xpath=//form", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "6b7ee6e1-a763-40ea-96de-a297fe47e089",
-      "comment": "",
-      "command": "doubleClick",
-      "target": "css=form",
-      "targets": [
-        ["css=form", "css:finder"],
-        ["xpath=//form[@action='/']", "xpath:attributes"],
-        ["xpath=//form", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "40d6ba07-6167-4e2e-a34b-aff21fd59ea5",
-      "comment": "",
-      "command": "click",
-      "target": "css=form",
-      "targets": [
-        ["css=form", "css:finder"],
-        ["xpath=//form[@action='/']", "xpath:attributes"],
-        ["xpath=//form", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "348972c4-d9b7-409e-ae1c-6985dd9112d2",
-      "comment": "",
-      "command": "select",
-      "target": "id=greinar_b44a7a9b-06ec-4a97-be08-df508046a084__nafnGreinar",
+      "command": "runScript",
+      "target": "window.scrollTo(0,32.79999923706055)",
       "targets": [],
-      "value": "label=10KM GÖTFL karla úti"
+      "value": ""
     }, {
-      "id": "58000f09-a55e-4136-a789-145a5f0e301c",
+      "id": "b347843e-17bb-4f93-9aec-25cb8cfcb409",
       "comment": "",
       "command": "assertValue",
-      "target": "id=greinar_b44a7a9b-06ec-4a97-be08-df508046a084__nafnGreinar",
+      "target": "xpath=//table[@id='children']/tbody/select",
       "targets": [
-        ["id=greinar_b44a7a9b-06ec-4a97-be08-df508046a084__nafnGreinar", "id"],
-        ["name=greinar[b44a7a9b-06ec-4a97-be08-df508046a084].nafnGreinar", "name"],
-        ["css=#greinar_b44a7a9b-06ec-4a97-be08-df508046a084__nafnGreinar", "css:finder"],
-        ["xpath=//select[@id='greinar_b44a7a9b-06ec-4a97-be08-df508046a084__nafnGreinar']", "xpath:attributes"],
-        ["xpath=//table[@id='children']/tbody/select", "xpath:idRelative"],
-        ["xpath=//tbody/select", "xpath:position"]
-      ],
-      "value": "10KM GÖTFL;karla;;úti"
-    }, {
-      "id": "17b3ede9-3a58-48cb-adc2-07af89cb28a5",
-      "comment": "",
-      "command": "click",
-      "target": "css=form",
-      "targets": [
-        ["css=form", "css:finder"],
-        ["xpath=//form[@action='/']", "xpath:attributes"],
-        ["xpath=//form", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "e89e35d1-7bd4-4f36-97b8-9d3543e2aa3f",
-      "comment": "",
-      "command": "click",
-      "target": "css=form",
-      "targets": [
-        ["css=form", "css:finder"],
-        ["xpath=//form[@action='/']", "xpath:attributes"],
-        ["xpath=//form", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "fc458355-f8eb-4879-94f0-5718f0a3053f",
-      "comment": "",
-      "command": "click",
-      "target": "css=.form-group:nth-child(1)",
-      "targets": [
-        ["css=.form-group:nth-child(1)", "css:finder"],
-        ["xpath=//form/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "78bd88b2-f0c8-4cd0-8e19-b3fbb541765d",
-      "comment": "",
-      "command": "assertValue",
-      "target": "id=greinar_5b206d8f-dda2-4546-8b80-6e5fbc4e7b65__nafnGreinar",
-      "targets": [
-        ["id=greinar_5b206d8f-dda2-4546-8b80-6e5fbc4e7b65__nafnGreinar", "id"],
-        ["name=greinar[5b206d8f-dda2-4546-8b80-6e5fbc4e7b65].nafnGreinar", "name"],
-        ["css=#greinar_5b206d8f-dda2-4546-8b80-6e5fbc4e7b65__nafnGreinar", "css:finder"],
-        ["xpath=//select[@id='greinar_5b206d8f-dda2-4546-8b80-6e5fbc4e7b65__nafnGreinar']", "xpath:attributes"],
+        ["id=greinar_dc74955a-8f73-4247-9585-eea443a0763d__nafnGreinar", "id"],
+        ["name=greinar[dc74955a-8f73-4247-9585-eea443a0763d].nafnGreinar", "name"],
+        ["css=#greinar_dc74955a-8f73-4247-9585-eea443a0763d__nafnGreinar", "css:finder"],
+        ["xpath=//select[@id='greinar_dc74955a-8f73-4247-9585-eea443a0763d__nafnGreinar']", "xpath:attributes"],
         ["xpath=//table[@id='children']/tbody/select", "xpath:idRelative"],
         ["xpath=//tbody/select", "xpath:position"]
       ],
       "value": "1 MÍLA;karla;;úti"
     }, {
-      "id": "dc6cd0ba-45db-495d-bc98-1f1051cbc9a4",
+      "id": "92e04fc9-3e1e-4dcf-bc90-998a485ed157",
+      "comment": "",
+      "command": "assertValue",
+      "target": "xpath=//table[@id='children']/tbody/select[2]",
+      "targets": [
+        ["id=greinar_c7b8cc24-11a5-4e95-b793-3952453db1d5__nafnGreinar", "id"],
+        ["name=greinar[c7b8cc24-11a5-4e95-b793-3952453db1d5].nafnGreinar", "name"],
+        ["css=#greinar_c7b8cc24-11a5-4e95-b793-3952453db1d5__nafnGreinar", "css:finder"],
+        ["xpath=//select[@id='greinar_c7b8cc24-11a5-4e95-b793-3952453db1d5__nafnGreinar']", "xpath:attributes"],
+        ["xpath=//table[@id='children']/tbody/select[2]", "xpath:idRelative"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": "1 KLST HLA;kvenna;;úti"
+    }, {
+      "id": "f9456011-cccd-4d46-afdc-ab43904a668a",
+      "comment": "",
+      "command": "assertValue",
+      "target": "xpath=//table[@id='children']/tbody/select[3]",
+      "targets": [
+        ["id=greinar_a5d8c510-180f-468a-a11e-bdb0dccc7b0b__nafnGreinar", "id"],
+        ["name=greinar[a5d8c510-180f-468a-a11e-bdb0dccc7b0b].nafnGreinar", "name"],
+        ["css=#greinar_a5d8c510-180f-468a-a11e-bdb0dccc7b0b__nafnGreinar", "css:finder"],
+        ["xpath=//select[@id='greinar_a5d8c510-180f-468a-a11e-bdb0dccc7b0b__nafnGreinar']", "xpath:attributes"],
+        ["xpath=//table[@id='children']/tbody/select[3]", "xpath:idRelative"],
+        ["xpath=//select[3]", "xpath:position"]
+      ],
+      "value": "1 MÍLA;karla;;inni"
+    }, {
+      "id": "cda6be09-0cf0-4f95-b9dd-56223dd4f620",
+      "comment": "",
+      "command": "assertValue",
+      "target": "xpath=//table[@id='children']/tbody/select[4]",
+      "targets": [
+        ["id=greinar_d76b694c-3fc9-4ffa-b6bc-6e9c342cc17d__nafnGreinar", "id"],
+        ["name=greinar[d76b694c-3fc9-4ffa-b6bc-6e9c342cc17d].nafnGreinar", "name"],
+        ["css=#greinar_d76b694c-3fc9-4ffa-b6bc-6e9c342cc17d__nafnGreinar", "css:finder"],
+        ["xpath=//select[@id='greinar_d76b694c-3fc9-4ffa-b6bc-6e9c342cc17d__nafnGreinar']", "xpath:attributes"],
+        ["xpath=//table[@id='children']/tbody/select[4]", "xpath:idRelative"],
+        ["xpath=//select[4]", "xpath:position"]
+      ],
+      "value": "1 MÍLA;kvenna;;inni"
+    }]
+  }, {
+    "id": "64cd035f-a092-4ebe-abe0-0e45b18eb6d3",
+    "name": "ChooseEvents",
+    "commands": [{
+      "id": "2ec19545-4698-4c00-8842-806ffe45a269",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1446bc9e-051b-4cab-a49e-24ec5e2518a3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "768x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4aa405f-4514-43b5-adce-b45913782b9c",
       "comment": "",
       "command": "click",
-      "target": "css=.container:nth-child(2)",
+      "target": "id=addChild",
       "targets": [
-        ["css=.container:nth-child(2)", "css:finder"],
-        ["xpath=//body/div", "xpath:position"]
+        ["id=addChild", "id"],
+        ["xpath=//button[@id='addChild']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Úti Karla')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "db2330df-c1d6-442b-8381-3986052eb1b7",
+      "id": "1116ff07-52ec-480d-b2fc-0d67dc0ca801",
       "comment": "",
       "command": "click",
-      "target": "css=.container:nth-child(2)",
+      "target": "xpath=(//button[@id='addChild'])[2]",
       "targets": [
-        ["css=.container:nth-child(2)", "css:finder"],
-        ["xpath=//body/div", "xpath:position"]
+        ["xpath=(//button[@id='addChild'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Úti Kvenna')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "6905f2c9-91c6-4164-93d1-7c6a9c8951fb",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//button[@id='addChild'])[3]",
+      "targets": [
+        ["xpath=(//button[@id='addChild'])[3]", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Inni Karla')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f69fa174-4a30-4561-b28b-1ad36942ab5f",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//button[@id='addChild'])[4]",
+      "targets": [
+        ["xpath=(//button[@id='addChild'])[4]", "xpath:attributes"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Inni Kvenna')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f53c2e5-c4fa-4f90-9f36-a4626b7ce715",
+      "comment": "",
+      "command": "select",
+      "target": "xpath=//table[@id='children']/tbody/select",
+      "targets": [],
+      "value": "label=100M GR karla 15 úti"
+    }, {
+      "id": "770cd956-dfcf-4763-80cb-6860e32af775",
+      "comment": "",
+      "command": "assertValue",
+      "target": "xpath=//table[@id='children']/tbody/select",
+      "targets": [
+        ["id=greinar_5beffd87-831f-42a0-8f72-735b1ace084f__nafnGreinar", "id"],
+        ["name=greinar[5beffd87-831f-42a0-8f72-735b1ace084f].nafnGreinar", "name"],
+        ["css=#greinar_5beffd87-831f-42a0-8f72-735b1ace084f__nafnGreinar", "css:finder"],
+        ["xpath=//select[@id='greinar_5beffd87-831f-42a0-8f72-735b1ace084f__nafnGreinar']", "xpath:attributes"],
+        ["xpath=//table[@id='children']/tbody/select", "xpath:idRelative"],
+        ["xpath=//tbody/select", "xpath:position"]
+      ],
+      "value": "100M GR;karla;15;úti"
+    }, {
+      "id": "91f075a8-b5ac-4e4e-a8a8-04fe4f779f42",
+      "comment": "",
+      "command": "select",
+      "target": "xpath=//table[@id='children']/tbody/select[2]",
+      "targets": [],
+      "value": "label=10KMGANGA kvenna úti"
+    }, {
+      "id": "d080c89f-ada7-45f6-8f0e-99c3567a830f",
+      "comment": "",
+      "command": "assertValue",
+      "target": "xpath=//table[@id='children']/tbody/select[2]",
+      "targets": [
+        ["id=greinar_c04a8492-7877-4e1b-a97d-0b794fe32b96__nafnGreinar", "id"],
+        ["name=greinar[c04a8492-7877-4e1b-a97d-0b794fe32b96].nafnGreinar", "name"],
+        ["css=#greinar_c04a8492-7877-4e1b-a97d-0b794fe32b96__nafnGreinar", "css:finder"],
+        ["xpath=//select[@id='greinar_c04a8492-7877-4e1b-a97d-0b794fe32b96__nafnGreinar']", "xpath:attributes"],
+        ["xpath=//table[@id='children']/tbody/select[2]", "xpath:idRelative"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": "10KMGANGA;kvenna;;úti"
+    }, {
+      "id": "aea2bad1-7788-4c8f-a949-b7496fca838a",
+      "comment": "",
+      "command": "select",
+      "target": "xpath=//table[@id='children']/tbody/select[3]",
+      "targets": [],
+      "value": "label=50M karla inni"
+    }, {
+      "id": "ee6e00e1-4424-4da7-86d6-c6054849c5d7",
+      "comment": "",
+      "command": "assertValue",
+      "target": "xpath=//table[@id='children']/tbody/select[3]",
+      "targets": [
+        ["id=greinar_fb2e7409-86ad-4165-a622-1e4f975db081__nafnGreinar", "id"],
+        ["name=greinar[fb2e7409-86ad-4165-a622-1e4f975db081].nafnGreinar", "name"],
+        ["css=#greinar_fb2e7409-86ad-4165-a622-1e4f975db081__nafnGreinar", "css:finder"],
+        ["xpath=//select[@id='greinar_fb2e7409-86ad-4165-a622-1e4f975db081__nafnGreinar']", "xpath:attributes"],
+        ["xpath=//table[@id='children']/tbody/select[3]", "xpath:idRelative"],
+        ["xpath=//select[3]", "xpath:position"]
+      ],
+      "value": "50M;karla;;inni"
+    }, {
+      "id": "bb274dc5-56bc-4eab-a0d9-ba27b61be5b0",
+      "comment": "",
+      "command": "select",
+      "target": "xpath=//table[@id='children']/tbody/select[4]",
+      "targets": [],
+      "value": "label=50M GRIND kvenna 22 inni"
+    }, {
+      "id": "5de2c1f0-1bfe-45d4-82d6-932f0366f580",
+      "comment": "",
+      "command": "assertValue",
+      "target": "xpath=//table[@id='children']/tbody/select[4]",
+      "targets": [
+        ["id=greinar_9ab630a9-46a8-4221-8980-f56123883b3b__nafnGreinar", "id"],
+        ["name=greinar[9ab630a9-46a8-4221-8980-f56123883b3b].nafnGreinar", "name"],
+        ["css=#greinar_9ab630a9-46a8-4221-8980-f56123883b3b__nafnGreinar", "css:finder"],
+        ["xpath=//select[@id='greinar_9ab630a9-46a8-4221-8980-f56123883b3b__nafnGreinar']", "xpath:attributes"],
+        ["xpath=//table[@id='children']/tbody/select[4]", "xpath:idRelative"],
+        ["xpath=//select[4]", "xpath:position"]
+      ],
+      "value": "50M GRIND;kvenna;22;inni"
     }]
   }, {
     "id": "15f670c7-75db-4d6f-8443-5e85812d58ff",
     "name": "SendWhenValid",
-    "commands": []
+    "commands": [{
+      "id": "2b8ffe0e-544f-4a83-9b5d-6edf86787b83",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "042d5cb2-b7a4-43c6-94dd-22e63fc8867c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "770x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7ae3c60-583e-44c1-9f4c-cff85b4e2155",
+      "comment": "",
+      "command": "click",
+      "target": "id=skraning_DagsFra",
+      "targets": [
+        ["id=skraning_DagsFra", "id"],
+        ["name=skraning.DagsFra", "name"],
+        ["css=#skraning_DagsFra", "css:finder"],
+        ["xpath=//input[@id='skraning_DagsFra']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b42540c-b11f-4583-95cc-fb11657ada33",
+      "comment": "",
+      "command": "type",
+      "target": "id=skraning_DagsFra",
+      "targets": [
+        ["id=skraning_DagsFra", "id"],
+        ["name=skraning.DagsFra", "name"],
+        ["css=#skraning_DagsFra", "css:finder"],
+        ["xpath=//input[@id='skraning_DagsFra']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2021-04-24"
+    }, {
+      "id": "eb25e339-e796-4341-ac94-e597491792c7",
+      "comment": "",
+      "command": "click",
+      "target": "id=skraning_DagsTil",
+      "targets": [
+        ["id=skraning_DagsTil", "id"],
+        ["name=skraning.DagsTil", "name"],
+        ["css=#skraning_DagsTil", "css:finder"],
+        ["xpath=//input[@id='skraning_DagsTil']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0ad47df-66b0-4677-b2ff-ee80eeb2a017",
+      "comment": "",
+      "command": "type",
+      "target": "id=skraning_DagsTil",
+      "targets": [
+        ["id=skraning_DagsTil", "id"],
+        ["name=skraning.DagsTil", "name"],
+        ["css=#skraning_DagsTil", "css:finder"],
+        ["xpath=//input[@id='skraning_DagsTil']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "2021-04-25"
+    }, {
+      "id": "e1f7b308-78d6-42bb-bdd7-75f198c1555d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Senda mót']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "7807e296-6a6e-488c-b666-30b14e50af2f",
