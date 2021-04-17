@@ -5,7 +5,7 @@
   "url": "https://localhost:44309",
   "tests": [{
     "id": "014dfc73-18aa-4024-adf7-83492a845093",
-    "name": "SendWhenDatesInvalid",
+    "name": "SendWhenDatesNotChosen",
     "commands": [{
       "id": "9cc59bdf-44db-4c4a-9790-81f1b4def06f",
       "comment": "",
@@ -217,19 +217,25 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "f2fd4e1e-09b4-40fe-a375-d953e2284eac",
+      "id": "6edb80df-65e9-4f29-bf1b-363aad195f2e",
       "comment": "",
       "command": "select",
       "target": "id=skraning_domari",
       "targets": [],
-      "value": "label=Bjarki Sigurðsson"
+      "value": "label=Úlfar Linnet"
     }, {
-      "id": "1aa187db-4c1f-4847-96c6-2c83dc3a4cee",
+      "id": "fd6d49ea-171f-44dd-baac-bb6d1b26ace7",
       "comment": "",
-      "command": "select",
+      "command": "assertValue",
       "target": "id=skraning_domari",
-      "targets": [],
-      "value": "label=Ástþór Jón Tryggvason"
+      "targets": [
+        ["id=skraning_domari", "id"],
+        ["name=skraning.domari", "name"],
+        ["css=#skraning_domari", "css:finder"],
+        ["xpath=//select[@id='skraning_domari']", "xpath:attributes"],
+        ["xpath=//div[5]/select", "xpath:position"]
+      ],
+      "value": "Úlfar Linnet"
     }]
   }, {
     "id": "fd13b024-9f28-478a-9fd1-b8d535d5fcd6",
@@ -506,7 +512,7 @@
     }]
   }, {
     "id": "15f670c7-75db-4d6f-8443-5e85812d58ff",
-    "name": "SendWhenValid",
+    "name": "SendWhenValidCompNoEvents",
     "commands": [{
       "id": "2b8ffe0e-544f-4a83-9b5d-6edf86787b83",
       "comment": "",
@@ -585,14 +591,719 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "3d2a4082-0457-463a-8ce0-39f7867aeecc",
+    "name": "ChooseDomariIceLetter",
+    "commands": [{
+      "id": "8543129b-581b-41fd-a27e-0df5cee38b9f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "78e71d4e-9823-4f93-8377-918ff4e2a939",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "779x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4c94558-2b63-45c6-ac3c-c70039e8b455",
+      "comment": "",
+      "command": "select",
+      "target": "id=skraning_domari",
+      "targets": [],
+      "value": "label=Bjarki Sigurðsson"
+    }, {
+      "id": "da4125fd-763c-4359-bc56-bee82d63fbbc",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=skraning_domari",
+      "targets": [
+        ["id=skraning_domari", "id"],
+        ["name=skraning.domari", "name"],
+        ["css=#skraning_domari", "css:finder"],
+        ["xpath=//select[@id='skraning_domari']", "xpath:attributes"],
+        ["xpath=//div[5]/select", "xpath:position"]
+      ],
+      "value": "Bjarki Sigurðsson"
+    }]
+  }, {
+    "id": "d13665fb-7517-4cc8-87ae-277d74b4cb19",
+    "name": "ChooseEventsIceLetter",
+    "commands": [{
+      "id": "7436899a-96b2-424b-87ed-9a80963a0d26",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "75399aca-3149-43a7-a3a4-ef9d48e2b8c2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "771x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1da4bb0c-bd88-4116-a106-9d856e2928c5",
+      "comment": "",
+      "command": "click",
+      "target": "id=addChild",
+      "targets": [
+        ["id=addChild", "id"],
+        ["xpath=//button[@id='addChild']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Úti Karla')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9eb3a06-f6a9-4b71-b466-0a273049e807",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//button[@id='addChild'])[2]",
+      "targets": [
+        ["xpath=(//button[@id='addChild'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Úti Kvenna')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c822fcd5-2fc1-4cce-84b1-0015fd59baf0",
+      "comment": "",
+      "command": "select",
+      "target": "xpath=//table[@id='children']/tbody/select",
+      "targets": [],
+      "value": "label=ÞRÍST karla úti"
+    }, {
+      "id": "080840e2-04bb-4940-b3f4-ca400b82ba48",
+      "comment": "",
+      "command": "assertValue",
+      "target": "xpath=//table[@id='children']/tbody/select",
+      "targets": [
+        ["id=greinar_60dc9464-4448-4232-a31d-2beca9d3b16f__nafnGreinar", "id"],
+        ["name=greinar[60dc9464-4448-4232-a31d-2beca9d3b16f].nafnGreinar", "name"],
+        ["css=#greinar_60dc9464-4448-4232-a31d-2beca9d3b16f__nafnGreinar", "css:finder"],
+        ["xpath=//select[@id='greinar_60dc9464-4448-4232-a31d-2beca9d3b16f__nafnGreinar']", "xpath:attributes"],
+        ["xpath=//table[@id='children']/tbody/select", "xpath:idRelative"],
+        ["xpath=//tbody/select", "xpath:position"]
+      ],
+      "value": "ÞRÍST;karla;;úti"
+    }, {
+      "id": "fea76e92-16db-4aa7-9fc7-c020761ebca0",
+      "comment": "",
+      "command": "select",
+      "target": "xpath=//table[@id='children']/tbody/select[2]",
+      "targets": [],
+      "value": "label=1500M kvenna úti"
+    }, {
+      "id": "d2650890-939e-4ab8-9a04-36a8b7469193",
+      "comment": "",
+      "command": "assertValue",
+      "target": "xpath=//table[@id='children']/tbody/select[2]",
+      "targets": [
+        ["id=greinar_530d5056-49c0-4cc3-adea-19945c0b7082__nafnGreinar", "id"],
+        ["name=greinar[530d5056-49c0-4cc3-adea-19945c0b7082].nafnGreinar", "name"],
+        ["css=#greinar_530d5056-49c0-4cc3-adea-19945c0b7082__nafnGreinar", "css:finder"],
+        ["xpath=//select[@id='greinar_530d5056-49c0-4cc3-adea-19945c0b7082__nafnGreinar']", "xpath:attributes"],
+        ["xpath=//table[@id='children']/tbody/select[2]", "xpath:idRelative"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": "1500M;kvenna;;úti"
+    }]
+  }, {
+    "id": "29962caa-187c-45fd-9c36-3dea6a864a1e",
+    "name": "ChooseMotshaldariIceLetter",
+    "commands": [{
+      "id": "e697b3ba-4fa1-4154-a421-80153a75bf0d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c00bc04-5cc5-41a6-b8c0-482ee9a18036",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "783x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f1b7ecbf-b614-42b9-a32b-8c319e26fb1f",
+      "comment": "",
+      "command": "select",
+      "target": "id=skraning_motshaldari",
+      "targets": [],
+      "value": "label=Íþróttafélag fatlaðra á Suðurnesjum"
+    }, {
+      "id": "f98dcce2-b9a3-458c-9f75-dd9f66064d57",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=skraning_motshaldari",
+      "targets": [
+        ["id=skraning_motshaldari", "id"],
+        ["name=skraning.motshaldari", "name"],
+        ["css=#skraning_motshaldari", "css:finder"],
+        ["xpath=//select[@id='skraning_motshaldari']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "Íþróttafélag fatlaðra á Suðurnesjum"
+    }]
+  }, {
+    "id": "7d8d012a-01f4-4f1a-a91a-515349342f82",
+    "name": "ChooseStadsetningIceLetter",
+    "commands": [{
+      "id": "3ffb6f3e-8c07-43c8-b6ab-2de1b28af706",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ac0d82c7-dca6-448d-8eaa-43ad0e859c74",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "786x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0a5214ae-da24-4209-a92b-e544dc955d8d",
+      "comment": "",
+      "command": "select",
+      "target": "id=skraning_stadsetning",
+      "targets": [],
+      "value": "label=Grundarfjörður"
+    }, {
+      "id": "adc7c29e-1098-4c48-a05b-a92052ba05f8",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=skraning_stadsetning",
+      "targets": [
+        ["id=skraning_stadsetning", "id"],
+        ["name=skraning.stadsetning", "name"],
+        ["css=#skraning_stadsetning", "css:finder"],
+        ["xpath=//select[@id='skraning_stadsetning']", "xpath:attributes"],
+        ["xpath=//div[4]/select", "xpath:position"],
+        ["xpath=//select[contains(.,'Akranes\nAkureyri\nBíldudalur\nBlönduós\nBoginn\nBorgarnesvöllur\nBúðardal\nDalvíkurvöllur\nDrangnesvöllur\nEgilshöll\nFáskrúðsfirði\nFífan\nFjarðarbyggðarhöllin\nFjarðarbyggð, Reyðarfjörður, Eskif\nGrenivíkurvöllur\nGrundarfjörður\nHamarsvöllur\nHellu\nHrafnagilsvöllur\nHrísey\nHvolsvöllur\nÍR - völlur\nÍsafjarðarvöllur\nÍþróttahús Dalvíkur\nÍþróttahús FSU\nÍþróttahúsið Flúðum\níþróttahúsið Hellu\nÍþróttahúsið Hrísey\nÍþróttahúsið Húsavík\nÍþróttahúsið Höfn\nÍþróttahúsið Iða\nÍþróttahúsið í Hrafnagili\nÍþróttahúsið í Ólafsfirði\nÍþróttahúsið í Ólafsvík\nÍþróttahúsið í Stykkishólmi\nÍþróttahúsið, Kirkjubæjarklaustri\nÍþróttahúsið Laugarvatni\nÍþróttahúsið Laugum\nÍþróttahúsið Varmahlíð\nÍþróttahús Sauðárkróki\nÍþróttah. Vallaskóla\nÍþróttahöllin\nÍþróttahöllin Akureyri\nÍþróttahöllin Kaplakrika\nÍþróttaleikvangur við Hamar\nÍþróttamiðstöðin Blönduósi\nÍþróttavöllur Húsavík\nÍþróttavöllurinn Kaplakrika\nÍþróttavöllurinn Varmahlíð\nÍþróttavöllurinn við Þjórsárver\nÍþróttavöllurinn Vík\nÍþróttavöllur Selfoss\nÍþróttavöllur Stykkishólmi\nÍþróttavöllur Sykkishólmi\nÍþróttavöllur Sævangi\nÍþróttavöllur Vestmannaeyjum\nÍþróttavöllur Þorlákshafnar\nKaplakriki, íþróttavöllur\nKollsárvöllur\nKópavogsvöllur\nKórinn\nLaugardalshöll\nLaugardalsvöllur\nLaugarvatnsvöllur\nLaugavöllur\nLýsuhóll\nNeskaupstaður\nÓlafsvík\nReykjaskóli\nSauðárkróksvöllur\nSauðárkrókur\nSelfoss\nSelfossvöllur\nSiglufjörður\nSindravellir\nSkagastrandarvöllur\nSkallagrímsvöllur\nVarmárvöllur\nVilhjálmsvöllur\nVík í Mýrdal\nVíkurvöllur\nVorboðavöllur\nÞelamerkurskóli\nÞorlákshafnarvöllur\nÞorlákshöfn\nÞórsvöllur\nÞórsvöllur, Akureyri\nÆskuvöllur')]", "xpath:innerText"]
+      ],
+      "value": "Grundarfjörður;úti"
+    }]
+  }, {
+    "id": "72909b08-20da-472f-8fcf-5f8aa6a3ec3e",
+    "name": "SendWhenDatesAreInvalid",
+    "commands": [{
+      "id": "379daefc-e4e4-40e1-ae4d-235d4456a70a",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e7a8ac9e-5e40-423f-9835-69e10adb154b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "774x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e21a7dbd-f471-4d3c-a7e4-0421232460a0",
+      "comment": "",
+      "command": "click",
+      "target": "id=skraning_DagsFra",
+      "targets": [
+        ["id=skraning_DagsFra", "id"],
+        ["name=skraning.DagsFra", "name"],
+        ["css=#skraning_DagsFra", "css:finder"],
+        ["xpath=//input[@id='skraning_DagsFra']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1595546-f123-4d79-bd47-06e339ce5c55",
+      "comment": "",
+      "command": "type",
+      "target": "id=skraning_DagsFra",
+      "targets": [
+        ["id=skraning_DagsFra", "id"],
+        ["name=skraning.DagsFra", "name"],
+        ["css=#skraning_DagsFra", "css:finder"],
+        ["xpath=//input[@id='skraning_DagsFra']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2021-04-25"
+    }, {
+      "id": "dd12e080-2624-4578-a88a-c2cb0b8497e4",
+      "comment": "",
+      "command": "click",
+      "target": "id=skraning_DagsTil",
+      "targets": [
+        ["id=skraning_DagsTil", "id"],
+        ["name=skraning.DagsTil", "name"],
+        ["css=#skraning_DagsTil", "css:finder"],
+        ["xpath=//input[@id='skraning_DagsTil']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6477b90-8dbf-4732-9012-37f635734409",
+      "comment": "",
+      "command": "type",
+      "target": "id=skraning_DagsTil",
+      "targets": [
+        ["id=skraning_DagsTil", "id"],
+        ["name=skraning.DagsTil", "name"],
+        ["css=#skraning_DagsTil", "css:finder"],
+        ["xpath=//input[@id='skraning_DagsTil']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "2021-04-24"
+    }, {
+      "id": "9eb6a091-c771-4ad7-8ce0-1258532fc39d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-group:nth-child(4)",
+      "targets": [
+        ["css=.form-group:nth-child(4)", "css:finder"],
+        ["xpath=//div[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c855e617-655d-4753-a9bd-2ed10b3d9f42",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Senda mót']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "129145ce-2c22-4a28-b56b-c3a35a391ef3",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.form-group:nth-child(1) > .field-validation-error",
+      "targets": [
+        ["css=.form-group:nth-child(1) > .field-validation-error", "css:finder"],
+        ["xpath=//div/span", "xpath:position"]
+      ],
+      "value": "The value '' is invalid."
+    }, {
+      "id": "21080003-806c-45d4-9e34-11305a25d3d9",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.form-group:nth-child(2) > .field-validation-error",
+      "targets": [
+        ["css=.form-group:nth-child(2) > .field-validation-error", "css:finder"],
+        ["xpath=//div[2]/span", "xpath:position"]
+      ],
+      "value": "The value '' is invalid."
+    }]
+  }, {
+    "id": "51c36085-53e1-4877-b4dc-437151d933d7",
+    "name": "SendWhenValidCompMultipleEvents",
+    "commands": [{
+      "id": "38898d39-4fd1-4512-998a-2e0d0b209862",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "057eee26-a2de-4403-a73e-71b0a1ab3590",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "773x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d585bae-dcbd-4530-8138-f5b9ec9897ba",
+      "comment": "",
+      "command": "type",
+      "target": "id=skraning_DagsFra",
+      "targets": [
+        ["id=skraning_DagsFra", "id"],
+        ["name=skraning.DagsFra", "name"],
+        ["css=#skraning_DagsFra", "css:finder"],
+        ["xpath=//input[@id='skraning_DagsFra']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2021-04-24"
+    }, {
+      "id": "de44eed1-a44f-47b6-b0e6-07cb03189892",
+      "comment": "",
+      "command": "type",
+      "target": "id=skraning_DagsTil",
+      "targets": [
+        ["id=skraning_DagsTil", "id"],
+        ["name=skraning.DagsTil", "name"],
+        ["css=#skraning_DagsTil", "css:finder"],
+        ["xpath=//input[@id='skraning_DagsTil']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "2021-04-25"
+    }, {
+      "id": "cff46e23-472c-41ca-9c29-4efe23454c84",
+      "comment": "",
+      "command": "click",
+      "target": "id=addChild",
+      "targets": [
+        ["id=addChild", "id"],
+        ["xpath=//button[@id='addChild']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Úti Karla')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b652488a-2872-4190-b42a-ada15ed3f4b4",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//button[@id='addChild'])[2]",
+      "targets": [
+        ["xpath=(//button[@id='addChild'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Úti Kvenna')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4b2e39c-6ff2-4521-9a0c-769550599d38",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//button[@id='addChild'])[3]",
+      "targets": [
+        ["xpath=(//button[@id='addChild'])[3]", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Inni Karla')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f41a0ccd-c7e4-4f87-b820-f4f0333e0eb8",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//button[@id='addChild'])[4]",
+      "targets": [
+        ["xpath=(//button[@id='addChild'])[4]", "xpath:attributes"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Inni Kvenna')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc302758-21e2-41d9-8f69-5e3d4cedb908",
+      "comment": "",
+      "command": "click",
+      "target": "id=addChild",
+      "targets": [
+        ["id=addChild", "id"],
+        ["xpath=//button[@id='addChild']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Úti Karla')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a36a71ec-2961-4f5e-ae8c-f176b68f89fe",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//button[@id='addChild'])[2]",
+      "targets": [
+        ["xpath=(//button[@id='addChild'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Úti Kvenna')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4049280e-ac62-4986-b90e-2e9b2554e299",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//button[@id='addChild'])[3]",
+      "targets": [
+        ["xpath=(//button[@id='addChild'])[3]", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Inni Karla')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc4e9f9f-81c5-483b-98f9-bfafac08d0ee",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//button[@id='addChild'])[4]",
+      "targets": [
+        ["xpath=(//button[@id='addChild'])[4]", "xpath:attributes"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Inni Kvenna')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "14a9dd82-b968-48ad-bea6-b04df67ad946",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Senda mót']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1225c6b3-0ca2-4ba3-a155-169254d315a0",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "id=greinar_f0925e63-fb08-465e-9fb0-fa7a2ef21aaa__nafnGreinar",
+      "targets": [
+        ["id=greinar_f0925e63-fb08-465e-9fb0-fa7a2ef21aaa__nafnGreinar", "id"],
+        ["name=greinar[f0925e63-fb08-465e-9fb0-fa7a2ef21aaa].nafnGreinar", "name"],
+        ["css=#greinar_f0925e63-fb08-465e-9fb0-fa7a2ef21aaa__nafnGreinar", "css:finder"],
+        ["xpath=//select[@id='greinar_f0925e63-fb08-465e-9fb0-fa7a2ef21aaa__nafnGreinar']", "xpath:attributes"],
+        ["xpath=//table[@id='children']/tbody/select", "xpath:idRelative"],
+        ["xpath=//tbody/select", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "bfe84fbb-ef5a-4714-b460-dcb6c5538017",
+    "name": "GoToPrivacyPage",
+    "commands": [{
+      "id": "e054a129-db05-467b-854b-84752c9cfc63",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9eba014f-3700-4eb6-a096-77a9e29a80b5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "775x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3dd2727-2d3c-4b32-81b8-d0335a70b778",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Motaskraning')]", "xpath:innerText"]
+      ],
+      "value": "Motaskraning"
+    }, {
+      "id": "e505d411-64b7-4bf6-bd64-0be090ebd7a7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.border-top a",
+      "targets": [
+        ["css=.border-top a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Privacy')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Home/Privacy')])[2]", "xpath:href"],
+        ["xpath=//footer/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f753327-a961-41c2-9c39-4668f30238ed",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Privacy Policy')]", "xpath:innerText"]
+      ],
+      "value": "Privacy Policy"
+    }]
+  }, {
+    "id": "f73dfa5e-8954-4211-8106-b00b84fec6c5",
+    "name": "GoToHomePageFromPrivacy",
+    "commands": [{
+      "id": "734e1974-1914-4217-90eb-ccfe35877861",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bb090e3e-4f24-4034-b9b4-15293f3ebae7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "778x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1669c411-8188-4ed4-821b-371b6608ea76",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Motaskraning')]", "xpath:innerText"]
+      ],
+      "value": "Motaskraning"
+    }, {
+      "id": "756b66be-ba68-4747-92c7-92d51ffe279e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.border-top a",
+      "targets": [
+        ["css=.border-top a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Privacy')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Home/Privacy')])[2]", "xpath:href"],
+        ["xpath=//footer/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "25b3107b-fbf0-4cd4-ba9b-e8cbeb356050",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Privacy Policy')]", "xpath:innerText"]
+      ],
+      "value": "Privacy Policy"
+    }, {
+      "id": "759d6106-6120-4ad7-abdc-24e2a98aa4b8",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/')])[2]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cfd59000-5c08-4b6a-8e12-443f28e00fe8",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Motaskraning')]", "xpath:innerText"]
+      ],
+      "value": "Motaskraning"
+    }]
+  }, {
+    "id": "bc4185a9-fd08-452c-9475-e000df0a1574",
+    "name": "GoToHome",
+    "commands": [{
+      "id": "fa43c5ed-d862-4ef1-8366-c2e60aee5b35",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "50216c9e-6c10-421d-9519-0df8e9cc78e7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "782x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "50eb3a60-4b92-4174-82db-4657360a36ad",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Motaskraning')]", "xpath:innerText"]
+      ],
+      "value": "Motaskraning"
+    }, {
+      "id": "b42a0831-d41d-4977-b81c-c471ea5f01ae",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/')])[2]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "772c138d-cede-42e5-95a9-56bdc7b61279",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Motaskraning')]", "xpath:innerText"]
+      ],
+      "value": "Motaskraning"
+    }]
+  }, {
+    "id": "fb3dc5f5-86fb-4b15-a1cc-3d1f6e9031a4",
+    "name": "GoToHomePageWithMotaskraningWebButton",
+    "commands": [{
+      "id": "21446912-b2a6-4cf2-a864-054def796c10",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "daed0c82-f673-4369-908f-ae32a1ff7de6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "786x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e131a994-392a-48e9-a04f-57da3d5efd7f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Motaskraning')]", "xpath:innerText"]
+      ],
+      "value": "Motaskraning"
+    }, {
+      "id": "f1766da2-fd0d-48b5-9b63-75fedab308dd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=MotaskraningWeb",
+      "targets": [
+        ["linkText=MotaskraningWeb", "linkText"],
+        ["css=.navbar-brand", "css:finder"],
+        ["xpath=//a[contains(text(),'MotaskraningWeb')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'MotaskraningWeb')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe622499-a989-4502-9c7f-cd80e7d55375",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Motaskraning')]", "xpath:innerText"]
+      ],
+      "value": "Motaskraning"
+    }]
   }],
   "suites": [{
     "id": "7807e296-6a6e-488c-b666-30b14e50af2f",
-    "name": "Default Suite",
+    "name": "All tests",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["014dfc73-18aa-4024-adf7-83492a845093"]
+    "tests": ["fd13b024-9f28-478a-9fd1-b8d535d5fcd6", "76073b26-d492-447f-b0f9-6809cb3a9e71", "4fe2c782-7ba5-4144-9932-8c179e586b87", "3d2a4082-0457-463a-8ce0-39f7867aeecc", "92ae96f3-9667-491a-8f90-7ae42c974d54", "29962caa-187c-45fd-9c36-3dea6a864a1e", "dc335b3b-e8b4-4096-a194-3158052101bd", "7d8d012a-01f4-4f1a-a91a-515349342f82", "f73dfa5e-8954-4211-8106-b00b84fec6c5", "fb3dc5f5-86fb-4b15-a1cc-3d1f6e9031a4", "bfe84fbb-ef5a-4714-b460-dcb6c5538017", "72909b08-20da-472f-8fcf-5f8aa6a3ec3e", "d13665fb-7517-4cc8-87ae-277d74b4cb19", "64cd035f-a092-4ebe-abe0-0e45b18eb6d3", "014dfc73-18aa-4024-adf7-83492a845093", "bc4185a9-fd08-452c-9475-e000df0a1574", "51c36085-53e1-4877-b4dc-437151d933d7", "15f670c7-75db-4d6f-8443-5e85812d58ff"]
   }],
   "urls": ["https://localhost:44309/"],
   "plugins": []
